@@ -1,43 +1,46 @@
 # System-Design Judgement
 
-A personal, living repo for building real system-design judgement — not a
-pattern-vocabulary dump, but the ability to choose the right pattern for a set of
-constraints, articulate the trade-off, and anticipate failure modes before they
-bite.
+A personal, living repo for getting genuinely good at system design — not just
+knowing the names of patterns, but knowing which one to reach for, what it costs,
+and how it breaks.
 
-Patterns here are absorbed *from* the canon (Designing Data-Intensive
-Applications, Domain-Driven Design, Microservices Patterns) as tight "what it is /
-what it costs / when to use it" notes — backed by hands-on **break-it-then-fix-it**
-practicals and design-sparring write-ups.
+Each pattern gets a short note — what it is, what it costs, and when to use it —
+pulled from the main books (Designing Data-Intensive Applications, Domain-Driven
+Design, Microservices Patterns). Every note is backed by a hands-on experiment:
+break the pattern on purpose, then fix it.
 
-> Work in progress. The contents below are the syllabus; each item gets filled in
-> with notes, diagrams, and practicals as I work through it.
+> Work in progress. The list below is the plan; each item gets filled in with
+> notes, diagrams, and experiments as I work through it.
 
 ## How this repo is organised
 
 | Path | What lives here |
 | --- | --- |
-| [`PROPOSAL.md`](PROPOSAL.md) | The full mentor proposal — goal, learning mechanism, measurement, cadence |
-| `modules/` | Notes per pattern cluster (one folder per module below) |
+| [`PROPOSAL.md`](PROPOSAL.md) | The full plan I'm taking to my mentor — goal, how I'll learn, how we'll measure it, and how often we'll meet |
+| `modules/` | Notes, one folder per module below |
 | `practicals/` | Hands-on experiments: break a pattern on purpose, then fix it |
-| `sparring/` | Design-exercise prompts and my write-ups |
-| `rubric.md` | Competency rubric used to score progress *(to add)* |
+| `sparring/` | Design exercises and my write-ups |
+| `rubric.md` | A scorecard for tracking progress *(to add)* |
 
-## The decision framework (the spine)
+## How I decide
 
-The lens applied to every pattern below:
+The questions I ask of every pattern below:
 
-- Derive patterns from **NFRs**, never the reverse.
-- Complexity must be **pulled** by a stated requirement, not pushed by a pattern.
-- Sort decisions by **reversibility** (one-way vs two-way doors); spend effort
-  proportionally.
-- Separate **"must be correct"** from **"must be available"**; spend the
-  complexity budget where correctness matters.
-- Name the **coupling** being removed and its permanent cost.
+- **Start from the real requirements** — traffic, latency, consistency, growth —
+  not from a pattern I happen to like.
+- **Only add complexity when a requirement demands it**, never because a pattern
+  looks clever.
+- **Decide fast on things that are easy to undo; think hard about the ones that
+  aren't** (one-way vs two-way doors).
+- **Know whether a thing must be correct or must be available** — they need
+  different solutions — and spend the effort where correctness matters.
+- **Before splitting two things apart, be clear what it costs**, because
+  decoupling is never free.
 
-## Contents of learnings
+## What I'm learning
 
-Eight modules, sequenced by leverage. Tick items off as notes + a practical land.
+Eight modules, ordered so the most important ideas come first. Tick items off as
+a note and a practical land for each.
 
 ### Module 0 — Foundations: the laws & mental models
 
@@ -120,5 +123,5 @@ Eight modules, sequenced by leverage. Tick items off as notes + a practical land
 ## Sources (reference, optional)
 
 Domain-Driven Design (Evans / Vernon) · Designing Data-Intensive Applications
-(Kleppmann) · Microservices Patterns (Richardson). Reached for when a distilled
-note needs more depth — not a reading list to work through.
+(Kleppmann) · Microservices Patterns (Richardson). Dip into these when a note
+needs more depth — not a reading list to get through.
